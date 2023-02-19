@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Minimax Robustness in Bayesian Reinforcement Learning">
+  <meta name="keywords" content="Minimax, Reinforcement Learning, Bayesian Reinforcement Learning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Minimax-Bayes Reinforcement Learning</title>
+
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.ico">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Minimax-Bayes Reinforcement Learning</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=1VT2sBgAAAAJ">Thomas Kleine Büning*</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=9Kw4t_kAAAAJ">Christos Dimitrakakis*</a><sup>1,2</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=KyX9dfEAAAAJ">Hannes Eriksson*</a><sup>3,4</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=0Gqji9cAAAAJ">Divya Grover*</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=Tn0Mk_wAAAAJ">Emilio Jorge*</a><sup>3</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of Oslo,</span>
+            <span class="author-block"><sup>2</sup>University of Neuchatel,</span>
+            <span class="author-block"><sup>3</sup>Chalmers University of Technology,</span>
+            <span class="author-block"><sup>4</sup>Zenseact</span>
+            <span class="author-block"><sup>*</sup><i>Equal contribution</i></span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://ewrl.files.wordpress.com/2022/09/minimax-brl-ewrl.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://ewrl.files.wordpress.com/2022/09/minimax-brl-ewrl.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/minimaxBRL/minimax-bayes-rl"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <h2 class="subtitle has-text-centered">
+        <img id="teaser" src="./static/images/regret_plot.png" width="70%">
+        <p>
+          Caption
+        </p>
+        </h2>
+      </div>
+    </div>
+  </section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            While the Bayesian decision-theoretic framework offers an elegant solution to the problem of decision making under uncertainty, one question is how to appropriately select the prior distribution.
+            One idea is to employ a worst-case prior.
+            
+            However, this is not as easy to specify in sequential decision making as in simple statistical
+            estimation problems.
+            
+            This paper studies (sometimes approximate) minimax-Bayes solutions for
+            various reinforcement learning problems to gain
+            insights into the properties of the corresponding
+            priors and policies. 
+          
+          We find that while the worst-case prior depends on the setting, the corresponding minimax policies are more robust than those
+            that assume a standard (i.e. uniform) prior.
+        </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+  </div>
+</section>
+
+<section class="section" id="Contributions">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Contributions</h2>
+    In this paper we study the basic theoretical and algorithmic properties of minimax-Bayes reinforcement learning. 
+    This incudes (a) characterising the existence of solutions under different assumptions on the policy and MDP space (b) defining algorithms, 
+    together with convergence guarantees when possible, and (c) performing numerical experiments to illustrate the behaviour of (approximate) 
+    minimax-Bayes algorithms and contrast them with Bayesian RL algorithms that assume a standard maximum entropy (e.g. uniform) prior.
+  </div>
+</section>
+
+<section class="section" id="Minimax Theorems">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Minimax Theorems</h2>
+  </div>
+</section>
+
+<section class="section" id="Experimental Results">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Experimental Results</h2>
+        <div class="hero-body">
+        <div class="subtitle has-text-centered">
+        <img id="teaser" src="./static/images/out1_psrl_lineplot.png" width="45%">
+        <img id="teaser" src="./static/images/boxplot.png" width="45%">
+        <p>
+          Caption
+        </p>
+        </div>
+      </div>
+  </div>
+</section>
+
+<section class="section" id="Questions">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Questions</h2>
+<ol>
+  <li>Why not optimise for Utility \(U(\pi, \beta)\) instead of Bayesian Regret \(L(\pi, \beta)\)?</li>
+  <ul>
+  <li>This is because an unrestricted set of priors for nature may lead to <b>absurd solutions</b>: nature could pick a prior so that all rewards are zero, thus trivially achieving minimal utility. 
+        For regret, nature would instead aim to choose the belief maximising the <b>gap</b> between the utility of the agent's policy and the optimal policy.</li>
+</ul>
+  <li>Why optimise over beliefs instead of MDPs \(\underset{\pi}{\min} \underset{\mu}{\max} R(\pi, \mu)\)?</li>
+    <ul>
+  <li>Answer</li>
+</ul>
+  <li>Why adaptive policies \(\pi \in \Pi^S\) over memoryless policies \(\pi \in \Pi^S_1\)?</li>
+    <ul>
+  <li>Answer</li>
+</ul>
+  <li>Do the results extend to parametric beliefs \(\beta_\omega\) and parametric policies \(\pi_\theta\)?</li>
+    <ul>
+  <li>Answer</li>
+</ul>
+</ol>
+  </div>
+</section>
+
+<section class="section" id="Acknowledgements">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Acknowledgements</h2>
+This work was partially supported by the Wallenberg
+AI, Autonomous Systems and Software Program (WASP)
+funded by the Knut and Alice Wallenberg Foundation, the
+Swedish research council grant on “Learning, Privacy and
+the Limits of Computation” and the Norwegian research
+council grant on “Algorithms and Models for Socially Beneficial AI”. We are grateful for their support. Many thanks
+to Emmanouel Androulakis, whose Master thesis developed MWA algorithms for this problem, and to Tor Lattimore for discussions about minimax properties in the
+Bayesian setting.
+  </div>
+</section>
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{buening2023minimax,
+  author    = {B{\"u}ning, Thomas Kleine and Dimitrakakis, Christos and Eriksson, Hannes and Grover, Divya and Jorge, Emilio},
+  title     = {Minimax-Bayes Reinforcement Learning},
+  booktitle={International Conference on Artificial Intelligence and Statistics},
+  year={2023},
+  organization={PMLR}
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
